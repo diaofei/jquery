@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            top: 0;
+        }
+        #pox{
+            width: 100px;
+            height: 100px;
+            background: blue;
+            position: absolute;
+            top: 110px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <div id="pox"></div>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script>
+        // $(function(){
+        //     let $obox = $('#box');
+        //     let $opox = $('#pox');
+        //     $obox.click(function(){
+        //        $opox.animate({left:800},5000,function(){
+        //            $opox.animate({top:500},5000,function(){
+        //                $opox.animate({left:0},5000,function(){
+        //                    $opox.animate({top:110},5000)
+        //                })
+        //            })
+        //        })
+        //     })
+        // })
+        $(function(){
+            let $obox = $('#box');
+            let $opox = $('#pox');
+            $obox.click(function(evt){
+               $opox.animate({left:800},5000,function(){
+                   $opox.animate({top:500},5000,function(){
+                       $opox.animate({left:0},5000,function(){
+                           $opox.animate({top:110},5000)
+                       })
+                       
+                   })
+               })
+            //    evt.stopPropagation();
+            //    evt.preventDefault();
+            return false;
+            })
+            $(document).click(function(){
+                //$opox.stop();
+                $opox.finish();
+            })
+        })
+    </script>
+</body>
+</html>

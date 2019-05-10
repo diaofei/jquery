@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">孔子</div>
+    <h4>论语</h4>
+    <div class="one">子在川上曰：</div>
+    <p>"逝者如斯夫！</p>
+    <p>不舍昼夜。"</p>
+    a) 找到.one 改变他的字体颜色
+    b) 找到#main给他增加border：1px solid red
+    c) 找到 p 标签元素给他添加边框
+    border:1px solid green
+    d) 找到全部元素改变字体 28px
+    e) 找到 ID 与 ClassName 添加
+    background:red
+    <script src="js/jquery-1.11.3.js"></script>
+    <script>
+        $(function(){
+            $('.one').css({'color':'pink',fontSize:40});
+            $('#main').css('border','1px solid red');
+            $('p').css('border','1px solid green');
+            $('*').css('fontSize','28px');
+            $('#main,.one').css('background','red')
+            $('#main,.one').css('background','blue');
+        })
+    </script>
+</body>
+</html>

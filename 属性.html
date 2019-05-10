@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+        .aa{
+            width: 100px;
+            height: 100px;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" class="pox" me="you"></div>
+    <div id="bb"></div>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script>
+        $(function(){
+            let $obox = $('#box');
+            //console.log($obox.attr('me'));
+            //$obox.attr('hehe','haha');
+            // $obox.removeAttr('hehe');
+            // $obox.addClass('haha');
+            // $obox.removeClass('pox');
+            $obox.click(function(){
+                $('#bb').toggleClass('aa');
+                //$(this).html('开');
+                $(this).html('<strong>开</strong>');
+                $(this).text('<strong>开</strong>')
+            })
+        })
+    </script>
+</body>
+</html>

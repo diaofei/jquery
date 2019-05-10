@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script>
+        window.onload = function(){
+            let obtn = document.getElementById('btn');
+            alert(obtn);
+            obtn.onclick = function(){
+                //alert('js:'+this);
+                alert('js:'+this.value);
+            }
+        }
+        $(function(){
+            let $obtn = $('#btn');
+            //alert($obtn[0]);
+            alert($obtn.get(0));
+            $obtn.click(function(){
+                alert('jquery:'+$(this).val());
+            })
+        })
+        // $(function(){
+        //     let $obtn = $('#btn');
+        //     $obtn.click(function(){
+
+        //     })
+        // })
+    </script>
+</head>
+<body>
+    <input type="button" name="btn" id="btn" value="按钮">
+</body>
+</html>

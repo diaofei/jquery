@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0
+        }
+        #box{
+            width: 300px;
+            height: 250px;
+            background: pink;
+            position: absolute;
+            left: 500px;
+            top: 300px;
+            display: none; 
+        }
+        #box1{
+            width: 300px;
+            height: 50px;
+            background: blue;
+        }
+        #btn1{
+            width: 70px;
+            height: 50px;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="弹出" id="btn">
+    <div id="box">
+        <div id="box1">
+            <input type="button" value="按钮" id="btn1">
+        </div>
+    </div>
+    <script>
+        var obtn = document.getElementById('btn');
+        var obox = document.getElementById('box');
+        var obox1 = document.getElementById('box1');
+        var obtn1 =  document.getElementById('btn1');
+        var obody = document.querySelector('body');
+        obtn.onclick = function(){
+            obox.style.display = 'block';
+            obody.style.backgroundColor = 'gray';
+        }
+        obox1.onmousedown = function(evt){
+            var e = evt || window.event;
+            var l = e.offsetX;
+            var r = e.offsetY;
+            document.onmousemove = function(evt){
+                var e = evt || window.event;
+                var left = e.pageX - l;
+                var top = e.pageY - r;
+                if(left <= 0){
+                    left = 0;
+                }else if(left >= document.documentElement.clientWidth - obox.offsetWidth){
+                    left = document.documentElement.clientWidth- obox.offsetWidth;
+                }
+                if(top <= 0){
+                    top = 0;
+                }else if(top >= document.documentElement.clientHeight - obox.offsetHeight){
+                    top = document.documentElement.clientHeight - obox.offsetHeight;
+                }
+                obox.style.left = left +'px';
+                obox.style.top = top +'px';
+                obox1.onmouseup = function(){
+                    document.onmousemove = null;
+                }
+            } 
+        }
+        obtn1.onclick = function(){
+            obox.style.display = 'none';
+            obody.style.backgroundColor = 'white';
+        }
+    </script>
+</body>
+</html>
